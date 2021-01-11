@@ -6,12 +6,10 @@ import hiber.model.User;
 import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.sql.SQLException;
-import java.sql.SQLOutput;
 import java.util.List;
 
 public class MainApp {
-   public static void main(String[] args) throws SQLException {
+   public static void main(String[] args) {
       AnnotationConfigApplicationContext context = 
             new AnnotationConfigApplicationContext(AppConfig.class);
 
@@ -48,8 +46,8 @@ public class MainApp {
          System.out.println(user.getCar());
          System.out.println();
       }
-      System.out.println("The User who has Subaru Forester 2020 is: \n"
-              + userService.getUserByCarModelAndSeries("Subaru Forester", 2020));
+      System.out.println("The User who has Toyota Land Cruiser 200 is: \n"
+              + userService.getUserByCarModelAndSeries("Toyota Land Cruiser", 200));
 
       context.close();
    }
